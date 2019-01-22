@@ -16,11 +16,11 @@ snd_pcm_t* sdr_pcm_handle(const char* pcm_name,
     snd_pcm_t *pcm_handle;
     snd_pcm_hw_params_t *hwparams;
 
-    int dir = 1; // mean we want this value or larger
+    int dir = 0;
     int err = 0;
     unsigned int channels = 2;
-    const unsigned int periods = 4;
-    const unsigned int rate = 96000;
+    unsigned int periods = 4;
+    unsigned int rate = 96000;
 
     snd_pcm_hw_params_alloca(&hwparams);
     
@@ -61,13 +61,15 @@ snd_pcm_t* sdr_pcm_handle(const char* pcm_name,
     }
     
     // Period size
-    if ((err = snd_pcm_hw_params_set_period_size(pcm_handle, hwparams, frames, dir)) < 0) {
+    dir = 1;
+    if ((err = snd_pcm_hw_params_set_period_size_near(pcm_handle, hwparams, &frames, &dir)) < 0) {
         fprintf(stderr, "snd_pcm_hw_params_set_period_size: %s\n", snd_strerror(err));
         return NULL;
     }
     
     // Set number of periods. Periods used to be called fragments.
-    if ((err = snd_pcm_hw_params_set_periods(pcm_handle, hwparams, periods, dir)) < 0) {
+    dir = 1;
+    if ((err = snd_pcm_hw_params_set_periods_near(pcm_handle, hwparams, &periods, &dir)) < 0) {
         fprintf(stderr, "snd_pcm_hw_params_set_periods: %s\n", snd_strerror(err));
         return NULL;
     }
