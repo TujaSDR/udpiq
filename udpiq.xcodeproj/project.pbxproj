@@ -26,7 +26,6 @@
 /* Begin PBXFileReference section */
 		B104529C21F71FB300BBA4DE /* alsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alsa.h; sourceTree = "<group>"; };
 		B104529D21F71FB300BBA4DE /* alsa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alsa.c; sourceTree = "<group>"; };
-		B104529F21F71FBA00BBA4DE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B10452A021F71FFB00BBA4DE /* meson.build */ = {isa = PBXFileReference; lastKnownFileType = text; path = meson.build; sourceTree = "<group>"; };
 		B13B3D3521F71F590043FAF1 /* udpiq */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = udpiq; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13B3D3821F71F590043FAF1 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -62,7 +61,6 @@
 		B13B3D3721F71F590043FAF1 /* udpiq */ = {
 			isa = PBXGroup;
 			children = (
-				B104529F21F71FBA00BBA4DE /* README.md */,
 				B10452A021F71FFB00BBA4DE /* meson.build */,
 				B13B3D3821F71F590043FAF1 /* main.c */,
 				B104529D21F71FB300BBA4DE /* alsa.c */,
